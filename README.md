@@ -20,3 +20,5 @@ A simple hostel management system with an admin module and a student module
 EMAIL- admin@admin.com
 PASSWORD- 123user
 </p>
+![Admin_Student Log In](https://user-images.githubusercontent.com/48013364/193132717-802cc0e1-e2ec-4b36-8159-a23cecbf7801.png)
+[HOSTEL MANAGEMENT SYSTEM Presentation.pptx](https://github.com/itsMoriss/hostel_management_system/files/9678805/HOSTEL.MANAGEMENT.SYSTEM.Presentation.pptx)
