@@ -1,0 +1,99 @@
+{% load static %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% get_current_language as language_code %}
+
+<!DOCTYPE html>
+<html lang="{{ language_code }}">
+<head>
+
+   <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Hostel Management - Account</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+  <style type="text/css">
+      .form-login{
+            margin: 10px auto 0;
+            opacity: 0.85;
+          }
+          .form-signup{
+            margin: 10px auto 0;
+            opacity: 0.85;
+          }
+          .navbar-custom {
+        background-color: white;
+    }
+    body{
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: darkblue;
+    background-color: white;
+    background: url(../../../static/img/studentlogin.jpg);
+    background-size: cover;
+    }
+
+.content{
+/*    background-color: lightseagreen;
+*/
+margin-top: 20px;
+}
+
+.showPass{
+  cursor: pointer;
+  transition: all;
+}
+
+.showPass:hover{
+  transform: scale(1.2);
+}
+
+
+  </style>
+
+</head>
+
+<br><br>
+  <!-- End Header -->
+  
+<div class="container-fluid mt-3">
+
+    {% bootstrap_messages %}
+
+    {% block content %}
+        No content.
+    {% endblock %}
+
+</div>
+
+ 
+<script type="text/javascript">
+  const showPass = document.querySelector('.showPass');
+  const passwordField = document.querySelector("#id_password");
+
+  const handleToggleInput =(e)=>{
+
+    if (showPass.textContent === "SHOW PASSWORD"){
+      showPass.textContent = "HIDE PASSWORD";
+
+      passwordField.setAttribute("type","password");
+      
+    }else {
+      showPass.textContent = "SHOW PASSWORD";
+      passwordField.setAttribute("type","text");
+      
+    }
+  }
+  showPass.addEventListener("click",handleToggleInput);
+
+</script>
+
+<script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+</div>
+</html>

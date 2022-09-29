@@ -1,0 +1,52 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+	<h2 class="mb-1">Mess Details</h2>
+  <div class="text-right">
+     {% if request.user.is_superuser %}
+
+    <a href="{% url 'main:add_mess_menu' %}">Add Menu</a>
+    {% endif %}
+  </div>
+	  <div class="row">
+			<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Day</th>
+      <th scope="col">Breakfast</th>
+      <th scope="col">Price (Kshs.)</th>
+      <th scope="col">Lunch</th>
+      <th scope="col">Price (Kshs.)</th>
+      <th scope="col">Dinner</th>
+      <th scope="col">Price (Kshs.)</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for menu in menus %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{menu.day}}</td>
+      <td>{{menu.breakfast}} </td>
+      <td>{{menu.breakfast_price}} </td>
+      <td>{{menu.lunch}} </td>
+      <td>{{menu.lunch_price}} </td>
+      <td>{{menu.dinner}} </td>
+      <td>{{menu.dinner_price}} </td>
+     <td> <a href="{% url 'main:delete_menu' menu.pk %}" class="btn btn-danger">Delete Menu</a></td>
+    </tr>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+
+		</div>
+</div>
+
+{% endblock %}

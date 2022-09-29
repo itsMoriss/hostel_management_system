@@ -1,0 +1,49 @@
+{% extends 'layouts/default/page.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+
+<main class="content">
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-xl-6 form-signup">
+              <div class="card">
+                <div class="card-header text-center">
+                    <h2><b>WELCOME!</b></h2>
+                  <h4 class="card-subtitle text-muted">{% trans 'Create Account' %}</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+
+                        {% csrf_token %}
+                    <div class="mb-3">
+                        {% bootstrap_form form %}
+                         <!-- <span class="showPass" style="float:right;">SHOW PASSWORD</span> -->
+                    </div>
+                        <br>
+                        <button class="btn btn-primary">{% trans 'Create' %}</button>
+
+                    </form>
+                        
+              <div class="text-center">
+                      
+                   <ul style="list-style-type:none;">
+                    <li>
+                            <a href="{% url 'accounts:log_in' %}">{% trans 'Login to your Account' %}</a>
+                        </li>
+                       
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+</main>
+
+{% endblock %}
+

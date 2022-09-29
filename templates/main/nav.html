@@ -1,0 +1,48 @@
+{% load bootstrap4 %}
+<ul class="navbar navbar-dark bg-dark justify-content-around">
+ {% if request.user.is_superuser %}
+  <li class="nav-item">
+    <a href="{% url 'main:user_registration' %}">Register User</a> | 
+  </li>
+   <li class="nav-item">
+    <a href="{% url 'main:admin_dashboard' %}">Admin Dashboard</a> |
+  </li>
+   <li class="nav-item">
+    <a href="{% url 'main:admin_details' %}">Admin Details</a> |
+  </li>
+  <li class="nav-item">
+    <a href="{% url 'main:student_leave' %}">Student Leave</a> |
+  </li>
+  </li>
+    <li class="nav-item">
+    <a href="{% url 'main:hostel_staff_details' %}">Hostel Staff Details</a> |
+  </li>
+   </li>
+    <li class="nav-item">
+    <a href="{% url 'main:add_hostel' %}">Add Hostel</a> |
+  </li>
+     <li class="nav-item">
+    <a href="{% url 'main:add_school_fees' %}">Fee Payment</a> |
+  </li>
+ <li class="nav-item">
+    <a href="{% url 'main:fees_records' %}">Fee Records</a> |
+  </li>
+  {% comment %} <li class="nav-item">
+    <a href="{% url 'main:hostel_leave_details' %}">Hostel Leave Details</a> |
+  </li> {% endcomment %}
+
+    <li class="nav-item">
+    <a href="{% url 'main:student_details' %}">Student Details</a> |
+  </li>
+  {% endif %}
+ <li class="nav-item">
+    <a href="{% url 'main:mess_details' %}">Mess Details</a> |
+  </li>
+
+  <li class="nav-item">
+    <a href="{% url 'main:student_dashboard' %}">Student Dashboard</a> |
+  </li>
+    <li class="nav-item text-danger">
+    <a href="{% url 'accounts:log_out' %}">Log Out</a> 
+  </li>
+</ul>

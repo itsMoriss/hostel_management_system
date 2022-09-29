@@ -1,0 +1,75 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		{% if messages %}
+	<ul class="messages"  style="display:block" id="messages">
+	    {% for message in messages %}
+	    <li{% if message.tags %} class="text-{{ message.tags }}"{% endif %}> <h4> {{ message }} </h4></li>
+	    {% endfor %}
+	</ul>
+	{% endif %}
+	</div>
+	<h2 class="mb-1">Update User</h2>
+
+	  <div class="row">
+			<form method="post" action="{% url 'main:edit_student'  profile.id %}">
+				{% csrf_token %}
+				<input type="hidden"  name="profile_id" value="{{profile.id}}">
+				<input type="hidden" class="form-control" name="inputUsername" value="{{profile.user.username}}">
+
+				<div class="mb-1">
+			    <label for="inputFirstName" class="form-label">First Name</label>
+			    <input type="text" class="form-control" name="inputFirstName" value="{{profile.user.first_name}}">
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputLastName" class="form-label">Last Name</label>
+			    <input type="text" class="form-control" name="inputLastName" value="{{profile.user.last_name}}">
+			  </div>
+			   
+			<div class="mb-1">
+			    <label for="inputID" class="form-label">ID Number</label>
+			    <input type="text" class="form-control" name="inputID" value="{{profile.id_number}}">
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputCollege" class="form-label">College</label>
+			    <input type="text" class="form-control" name="inputCollege" value="{{profile.college}}">
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputYear" class="form-label">Year</label>
+			    <input type="text" class="form-control" name="inputYear" value="{{profile.year}}">
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputSemester" class="form-label">Semester</label>
+			    <input type="text" class="form-control" name="inputSemester" value="{{profile.semester}}">
+			  </div>
+			 
+			  <div class="mb-1">
+			    <label for="inputHostel" class="form-label">Hostel</label>
+			    <!-- <input type="text" class="form-control" name="inputHostel" value="{{profile.hostel}}"> -->
+			    <select class="form-select" name="inputHostel" aria-label="Default select example">
+			  <!-- <option selected>Open this select menu</option> -->
+			  {% for hostel in hostels %}
+			  <option value="{{hostel.hostel_name}}"
+			  {% if hostel.hostel_name == profile.hostel %}selected="selected"{% endif %}>{{hostel.hostel_name}}</option>
+			 {% endfor %}
+			</select>
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputRoomNumber" class="form-label">Room Number</label>
+			    <input type="text" class="form-control" name="inputRoomNumber" value="{{profile.room_number}}">
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputPhone" class="form-label">Phone</label>
+			    <input type="text" class="form-control" name="inputPhone" value="{{profile.phone}}">
+			  </div>
+			
+			  <button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+</div>
+
+{% endblock %}

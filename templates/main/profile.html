@@ -1,0 +1,29 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+	<h2 class="mb-1">User Profile</h2>
+	  <div class="row">
+			<form method="post" action="{% url 'main:edit_profile'  profile.id %}"> 
+			{% csrf_token %}
+			<input type="hidden"  name="profile_id" value="{{profile.id}}">
+
+			  <div class="mb-1">
+			    <label for="inputPhone" class="form-label">Phone Number</label>
+			    <input type="text" class="form-control" name="inputPhone" value="{{profile.phone}}">
+			  </div>
+				<div class="mb-1">
+			    <label for="inputID" class="form-label">ID</label>
+			    <input type="text" class="form-control" name="inputID" value="{{profile.id_number}}">
+			  </div>
+			   
+			  <button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+</div>
+
+{% endblock %}
+

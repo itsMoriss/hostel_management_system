@@ -1,0 +1,45 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+	<h2 class="mb-1">Add Mess Menu</h2>
+	  <div class="row">
+			<form method="post" action="{% url 'main:add_mess_menu' %}">
+				{% csrf_token %}
+				<div class="mb-1">
+			    <label for="inputDay" class="form-label">Day</label>
+			    <input type="text" class="form-control" name="inputDay">
+			  </div>
+			   <div class="mb-1">
+			    <label for="inputBreakfast" class="form-label">Breakfast</label>
+			    <input type="text" class="form-control" name="inputBreakfast" >
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputBreakfastPrice" class="form-label">Breakfast Price</label>
+			    <input type="text" class="form-control" name="inputBreakfastPrice" >
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputLunch" class="form-label">Lunch</label>
+			    <input type="text" class="form-control" name="inputLunch" >
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputLunchPrice" class="form-label">Lunch Price</label>
+			    <input type="text" class="form-control" name="inputLunchPrice" >
+			  </div>
+			   <div class="mb-1">
+			    <label for="inputDinner" class="form-label">Dinner</label>
+			    <input type="text" class="form-control" name="inputDinner" >
+			  </div>
+			   <div class="mb-1">
+			    <label for="inputDinnerPrice" class="form-label">Dinner Price</label>
+			    <input type="text" class="form-control" name="inputDinnerPrice" >
+			  </div>
+			  <button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+	<h2 class="mb-1">Student Leave Details</h2>
+	  <div class="row">
+			<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Visiting</th>
+      <th scope="col">Departure Date</th>
+      <th scope="col">Arrival Date</th>
+      <th scope="col">Reason</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for leave in students_leave %}
+    <tr>
+      <td>{{leave.user.first_name}}</td>
+      <td>{{leave.user.last_name}}</td>
+      <td>{{leave.place_visiting}}</td>
+      <td>{{leave.departure_date}}</td>
+     <td>{{leave.arrival_date}}</td>
+     <td>{{leave.reason}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+		</div>
+</div>
+
+{% endblock %}

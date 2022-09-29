@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hostel Management </title>
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'font-awesome.5.13.1.all.min.css' %}">
+
+	<style type="text/css">
+	body{
+		background-color: white;
+		color: #083efd;
+		margin-top: 50px;
+		font-weight: 600;
+		background-image: url(../../static/img/hostel.jpg);
+		background-size: cover;
+	}
+		a{
+			color: #cbf83e;
+			font-family: "Raleway", sans-serif;
+			font-weight: 600;
+			
+		}
+		a:hover{
+			color: #2cccc3;
+		}
+		a:active{
+			color: #ffffff;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+		#messages{
+			margin-left:200px;
+		}
+		.domains{
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<!--<img src="../../static/img/hostel.jpg" alt="Hostel" class="img-responsive img-thumbnail">-->
+     <section>
+	       <div class="wave wave 1"></div>
+		   <div class="wave wave 2"></div>
+		   <div class="wave wave 3"></div>
+		   <div class="wave wave 4"></div>
+	    </section>
+	</body>
+
+{% comment %} <span>Username {{request.user.username}}</span> {% endcomment %}
+{% include 'main/nav.html' %}
+<div class="domains">
+{% block content %}
+
+{% endblock %}
+</div>
+<script type="text/javascript">
+// close the div in 5 secs
+window.setTimeout("closeHelpDiv();", 3000);
+
+function closeHelpDiv(){
+document.getElementById("messages").style.display=" none";
+}
+</script>
+
+<script type="text/javascript" src="{% static 'bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

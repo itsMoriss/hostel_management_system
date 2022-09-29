@@ -1,0 +1,90 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<style type="text/css">
+body{
+	background: url(../../static/img/dashboard.png);
+	background-size: cover;
+	opacity: 0.85;
+	font-weight: 600;
+	
+}
+
+
+</style>
+
+
+<div class="container">
+	<h2 class="mb-1 text-center">Admin Dashboard</h2>
+	  <div class="row mb-3 text-center">
+			
+			  <div class="col-sm-4">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Admin Details</h5>
+			        <!-- <i class="fa fa-search"></i> -->
+			        <a href="{% url 'main:admin_details' %}" class="btn btn-primary">View</a>
+			      </div>
+			    </div>
+			  </div>
+
+			  <div class="col-sm-4">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Students Registered</h5>
+			        
+			        <a href="{% url 'main:student_details' %}" class="btn btn-primary">View</a>
+			      </div>
+			    </div>
+			  </div>
+
+			  <div class="col-sm-4">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Mess Details</h5>
+			        
+			        <a href="{% url 'main:mess_details' %}" class="btn btn-primary">View</a>
+			      </div>
+			    </div>
+			  </div>
+			
+
+	</div>
+
+	 <div class="row mb-3 text-center">
+			  <div class="col-sm-4">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Hostel Students</h5>
+			       
+			        <a href="{% url 'main:student_details' %}" class="btn btn-primary">View</a>
+			      </div>
+			    </div>
+			  </div>
+
+			  <div class="col-sm-4">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Hostel Staff</h5>
+			       
+			        <a href="{% url 'main:hostel_staff_details' %}" class="btn btn-primary">View</a>
+			      </div>
+			    </div>
+			  </div>
+
+			  <div class="col-sm-4">
+			    <div class="card">
+			      <div class="card-body">
+			        <h5 class="card-title">Student Leave</h5>
+			        <a href="{% url 'main:student_leave' %}" class="btn btn-primary">View</a>
+			      </div>
+			    </div>
+			  </div>
+		
+	</div>
+
+</div>
+
+{% endblock %}

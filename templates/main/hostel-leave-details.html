@@ -1,0 +1,44 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+	<h2 class="mb-1">Hostel Leave Details</h2>
+	  <div class="row">
+			<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Student Name</th>
+      <th scope="col">ID</th>
+      <th scope="col">Hostel Name</th>
+      <th scope="col">Floor</th>
+      <th scope="col">Room</th>
+      <th scope="col">Departure Date</th>
+      <th scope="col">Arrival Date</th>
+      <th scope="col">Place of Visit</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in details %}
+    <tr>
+      <th scope="row">1</th>
+      <td>Joe Rogan</td>
+      <td>Jks34343</td>
+      <td>Logno Hse.</td>
+      <td>2nd</td>
+      <td>12</td>
+      <td>12/23/2020</td>
+      <td>12/29/2020</td>
+      <td>Home</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+		</div>
+</div>
+
+{% endblock %}

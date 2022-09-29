@@ -1,0 +1,44 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<style type="text/css">
+body{
+	background: url(../../static/img/stdash.jpg);
+	background-size: cover;
+	font-weight: 600;
+
+}
+
+</style>
+
+<div class="container">
+	<h2 class="mb-1 text-center">Student Dashboard</h2>
+	  <div class="row mb-3">
+			
+			  <div class="col-sm-6">
+			    <div class="card text-center">
+			      <div class="card-body">
+			        <h5 class="card-title">Student Info</h5>    
+			        <a href="{% url 'main:edit_student' profile.id %}" class="btn btn-primary">Show</a>
+			      </div>
+			    </div>
+			  </div>
+
+			  <div class="col-sm-6">
+			    <div class="card text-center">
+			      <div class="card-body">
+			        <h5 class="card-title">Mess Details</h5>
+			        <a href="{% url 'main:mess_details' %}" class="btn btn-primary">Show</a>
+			      </div>
+			    </div>
+			  </div>
+			
+
+	</div>
+
+
+</div>
+
+{% endblock %}

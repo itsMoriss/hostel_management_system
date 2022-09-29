@@ -1,0 +1,72 @@
+
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		{% if messages %}
+	<ul class="messages"  style="display:block" id="messages">
+	    {% for message in messages %}
+	    <li{% if message.tags %} class="text-{{ message.tags }}"{% endif %}> <h4> {{ message }} </h4></li>
+	    {% endfor %}
+	</ul>
+	{% endif %}
+	</div>
+	<style type="text/css">
+	body{
+		background: url(../../static/img/studentreg.jpg);
+		background-size: cover;
+		opacity: 0.7;
+		font-weight: 800;	
+	}
+	.container{
+		background-color: #f8eee7;
+		opacity: 0.85;
+	}
+	</style>
+
+	<h2 class="mb-1">Register a New User</h2>
+
+	  <div class="row">
+			<form method="post" action="{% url 'main:user_registration' %}">
+				{% csrf_token %}
+				<div class="mb-1">
+			    <label for="inputFirstName" class="form-label">First Name</label>
+			    <input type="text" class="form-control" name="inputFirstName">
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputLastName" class="form-label">Last Name</label>
+			    <input type="text" class="form-control" name="inputLastName">
+			  </div>
+			   <div class="mb-1">
+			    <label for="inputUsername" class="form-label">Username</label>
+			    <input type="text" class="form-control" name="inputUsername" >
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputRole" class="form-label">Role</label>
+			    <!-- <input type="text" class="form-control" name="inputRole" > -->
+			    <select class="form-control" name="inputRole">
+			      <option>Staff</option>
+			      <option>Student</option>
+			    </select>
+			  </div>
+			  <div class="mb-1">
+			    <label for="exampleInputEmail1" class="form-label">Email address</label>
+			    <input type="email" class="form-control" name="inputEmail" aria-describedby="emailHelp">
+			    <div name="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputPassword1" class="form-label">Password</label>
+			    <input type="password" class="form-control" name="inputPassword1">
+			  </div>
+			  <div class="mb-1">
+			    <label for="inputPassword2" class="form-label">Confirm Password</label>
+			    <input type="password" class="form-control" name="inputPassword2">
+			  </div>
+			  <button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+</div>
+
+{% endblock %}
