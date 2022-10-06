@@ -20,6 +20,15 @@ A simple hostel management system with an admin module and a student module
 . The initial email and password for the administrator are:
 EMAIL- admin@admin.com
 PASSWORD- 123user
+<hr>
+<h3>Running the App</h3>
+<p>--> Move into the directory where we have the project files:</br>
+<i>cd hostelmanagement</i></br>
+--> Install the requirements:</br>
+<i>pip install -r requirements.txt</i></br>
+--> To run the App, we use:</br>
+<i>python manage.py runserver</i></br>
+⚠ Then, the development server will be started at http://127.0.0.1:8000/
 </p>
 <p><i>Screenshot of the login page;</i><p>![Admin_Student Log In](https://user-images.githubusercontent.com/48013364/193132717-802cc0e1-e2ec-4b36-8159-a23cecbf7801.png)
 <hr>
