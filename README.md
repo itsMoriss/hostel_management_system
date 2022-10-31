@@ -30,6 +30,5 @@ PASSWORD- 123user
 <i>python manage.py runserver</i></br>
 ⚠ Then, the development server will be started at http://127.0.0.1:8000/
 </p>
-<p><i>Screenshot of the login page;</i><p>![Admin_Student Log In](https://user-images.githubusercontent.com/48013364/193132717-802cc0e1-e2ec-4b36-8159-a23cecbf7801.png)
 <hr>
 <p><i>Overview presentation;</i></p>[HOSTEL MANAGEMENT SYSTEM Presentation.pptx](https://github.com/itsMoriss/hostel_management_system/files/9678805/HOSTEL.MANAGEMENT.SYSTEM.Presentation.pptx)
